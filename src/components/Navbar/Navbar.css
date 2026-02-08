@@ -1,0 +1,139 @@
+.navbar {
+  position: relative;
+  width: 100%;
+  background: white;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+}
+
+.navbar.scrolled {
+  padding: 0.5rem 0;
+  box-shadow: 0 10px 30px rgba(218, 167, 93, 0.3);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* NEW CENTER LOGO */
+.nav-center-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.toyota-logo {
+  height: 40px;
+  width: auto;
+  filter: brightness(1.2) drop-shadow(0 2px 10px rgba(218, 167, 93, 0.5));
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .toyota-logo {
+  height: 36px;
+}
+
+.toyota-logo:hover {
+  filter: brightness(1.4) drop-shadow(0 4px 15px rgba(244, 196, 48, 0.6));
+}
+
+/* Push menu further right */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-left: auto; /* Push to right */
+}
+
+.nav-logo h2 {
+  background: linear-gradient(45deg, #daa75d, #f4c430);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #daa75d;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #daa75d, #f4c430);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #f8f1e9;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(44, 24, 16, 0.98);
+    flex-direction: column;
+    padding: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-center-logo {
+    display: none; /* Hide center logo on smaller screens */
+  }
+}

@@ -1,0 +1,168 @@
+.hero {
+  height: 100vh;
+  background-image: url("/Desert-Safari-Dune.jpg");
+  background-size: cover;
+  background-position: 70% 20%; /* Focus on car */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(12, 7, 4, 0.9) 0%,
+    rgba(12, 7, 4, 0.3) 50%,
+    transparent 85%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 8rem 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(18, 12, 8, 0.85);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(218, 167, 93, 0.3);
+  height: 100vh;
+  box-shadow: 100px 0 200px rgba(0, 0, 0, 0.8);
+}
+
+.hero-title {
+  font-size: clamp(3.8rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  color: #f8f1e9;
+  margin-bottom: 1rem;
+  font-family: "Arial Black", sans-serif;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9);
+}
+
+.hero-title .gradient-text {
+  color: #daa75d;
+  font-weight: 900;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  color: #d4c8a8;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  letter-spacing: 0.5px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.cta-button {
+  padding: 1.3rem 2.8rem;
+  border: none;
+  border-radius: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.4s ease;
+  position: relative;
+  min-width: 260px;
+  font-family: inherit;
+}
+
+.cta-button.primary {
+  background: #daa75d;
+  color: #1a0f08;
+  border-left: 4px solid #f4c430;
+  box-shadow: 0 10px 30px rgba(218, 167, 93, 0.4);
+}
+
+.cta-button.primary:hover {
+  background: #f4c430;
+  transform: translateX(15px);
+  box-shadow: 0 15px 40px rgba(244, 196, 48, 0.6);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: #f8f1e9;
+  border: 2px solid #daa75d;
+  padding-left: 2.2rem;
+}
+
+.cta-button.secondary:hover {
+  background: #daa75d;
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(218, 167, 93, 0.4);
+}
+
+/* Luxury scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(248, 241, 233, 0.7);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  animation: fadeMove 2s ease-in-out infinite;
+}
+
+@keyframes fadeMove {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    padding: 6rem 3rem 4rem;
+    backdrop-filter: blur(15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .hero-content {
+    height: auto;
+    padding: 4rem 2rem;
+    border-right: none;
+    box-shadow: none;
+    border-radius: 20px;
+  }
+
+  .hero-cta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

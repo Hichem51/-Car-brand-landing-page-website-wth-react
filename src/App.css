@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #2c1810 0%, #1a0f08 50%, #0d0704 100%);
+  color: #f8f1e9;
+  overflow-x: hidden;
+}
+.app {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
