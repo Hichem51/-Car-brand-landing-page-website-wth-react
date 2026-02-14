@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Video.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeHigh, faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Video = () => {
   const [textIndex, setTextIndex] = useState(0);
@@ -51,7 +53,11 @@ const Video = () => {
         className={`mute-button ${isMuted ? "muted" : ""}`}
         onClick={toggleMute}
       >
-        {isMuted ? "🔇" : "🔊"}
+        {isMuted ? (
+          <FontAwesomeIcon icon={faVolumeXmark} />
+        ) : (
+          <FontAwesomeIcon icon={faVolumeHigh} />
+        )}
       </button>
 
       <div className="video-content">

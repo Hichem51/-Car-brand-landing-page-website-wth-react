@@ -1,5 +1,16 @@
 import React from "react";
 import "./Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faYoutube,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faLocationDot,
+  faPhone,
+  faMountainSun,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -9,8 +20,10 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-brand">
           <div className="logo">
-            <h2>TOYOTA</h2>
-            <span className="desert-icon">🏜️</span>
+            <h2>Toyota Land Cruiser</h2>
+            <span className="desert-icon">
+              <FontAwesomeIcon icon={faMountainSun} />
+            </span>
           </div>
           <p className="tagline">Conquer Any Terrain</p>
         </div>
@@ -39,30 +52,30 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>Contact</h4>
           <div className="contact-item">
-            <span>📍</span>
+            <FontAwesomeIcon icon={faLocationDot} />
             <span>Desert Proving Grounds, NV</span>
           </div>
           <div className="contact-item">
-            <span>📞</span>
+            <FontAwesomeIcon icon={faPhone} />
             <span>+1 (702) OFF-ROAD</span>
           </div>
           <div className="social-row">
             <a
-              href="https://www.instagram.com/toyota?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              href="https://www.instagram.com/toyota"
               className="social-btn instagram"
             >
-              <i className="fab fa-instagram"></i>
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
 
             <a
-              href="https://www.youtube.com/user/TOYOTAglobal"
+              href="https://www.youtube.com/user/TOYOTAGlobal"
               className="social-btn youtube"
             >
-              <i className="fab fa-youtube"></i>
+              <FontAwesomeIcon icon={faYoutube} />
             </a>
 
             <a href="https://x.com/ToyotaSoCal" className="social-btn twitter">
-              <i className="fab fa-x-twitter"></i>
+              <FontAwesomeIcon icon={faXTwitter} />
             </a>
           </div>
         </div>

@@ -59,6 +59,9 @@
   margin-bottom: 1.5rem;
   display: block;
 }
+.feature-icon svg {
+  filter: drop-shadow(0 0 10px rgba(218, 167, 93, 0.6));
+}
 
 .feature-card h3 {
   font-size: 1.8rem;
