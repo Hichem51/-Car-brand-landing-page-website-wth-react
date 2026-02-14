@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  scroll-margin-top: 90px;
 }
 
 .video-background {
@@ -64,7 +65,6 @@
 }
 
 .desert-subtitle {
-  /* ADD THESE 3 LINES */
   white-space: nowrap;
   max-width: 90vw;
   font-size: clamp(2.5rem, 8vw, 6rem) !important;
@@ -89,7 +89,7 @@
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 25px 50px rgba(218, 167, 93, 0.6);
 }
-/* TOP RIGHT MUTE BUTTON */
+
 .mute-button {
   position: absolute;
   top: 30px;
@@ -127,20 +127,84 @@
   background: rgba(218, 167, 93, 0.7);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .mute-button {
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+@media (max-width: 1024px) {
+  .video-section {
+    height: 90vh;
+    scroll-margin-top: 80px;
+  }
+
+  .video-content {
+    max-width: 750px;
+    padding: 0 1.5rem;
+  }
+
+  .main-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .desert-subtitle {
+    margin: 0.75rem 0 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
+  .video-section {
+    height: auto;
+    min-height: 85vh;
+    padding: 5rem 1rem 4rem;
+    align-items: center;
+    scroll-margin-top: 90px;
+  }
+
+  .video-content {
+    padding: 0 1rem;
+  }
+
+  .main-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 0.5rem;
+  }
+
   .desert-subtitle {
-    font-size: clamp(3rem, 10vw, 5rem);
+    white-space: normal;
+    font-size: clamp(2.2rem, 8vw, 3.8rem);
     margin: 0.5rem 0 2rem;
+    letter-spacing: 0.03em;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .mute-button {
+    top: 18px;
+    right: 18px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-section {
+    padding: 4.5rem 0.75rem 3rem;
+    scroll-margin-top: 90px;
+  }
+
+  .desert-subtitle {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .cta-button {
+    max-width: 100%;
+  }
+
+  .mute-button {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
   }
 }

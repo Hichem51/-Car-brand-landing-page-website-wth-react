@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Hero.css";
 
 const Hero = () => {
@@ -9,9 +9,35 @@ const Hero = () => {
     });
   };
 
+  const backgrounds = [
+    "/Land-cruiser-Desert.jpg",
+    "/Land-cruiser-Hybrid.jpg",
+    "/land-cruiser-1958.jpg",
+    "./photo4.jpg",
+  ];
+
+  const [currentBg, setCurrentBg] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+    }, 5000); // change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [backgrounds.length]);
+
   return (
     <section className="hero" id="home">
+      {backgrounds.map((bg, index) => (
+        <div
+          key={index}
+          className={`hero-bg ${index === currentBg ? "active" : ""}`}
+          style={{ backgroundImage: `url(${bg})` }}
+        ></div>
+      ))}
+
       <div className="hero-bg-overlay"></div>
+
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
@@ -28,6 +54,7 @@ const Hero = () => {
             </button>
           </div>
         </div>
+
         <div className="hero-image">
           <div className="car-showroom"></div>
         </div>

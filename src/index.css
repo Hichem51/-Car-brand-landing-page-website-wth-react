@@ -1,17 +1,17 @@
 :root {
-  --bg: #0f1112; /* cinematic charcoal */
-  --surface: #141718; /* slightly lighter */
+  --bg: #0f1112;
+  --surface: #141718;
   --surface-2: #1b1f21;
-  --text: #f3f0ea; /* warm off-white */
+  --text: #f3f0ea;
   --muted: rgba(243, 240, 234, 0.72);
   --muted-2: rgba(243, 240, 234, 0.56);
 
-  --sand: #d6c4a6; /* beige/sand */
+  --sand: #d6c4a6;
   --sand-2: #bfa98a;
   --charcoal: #0f1112;
 
-  --accent: #f2a23a; /* amber */
-  --accent-2: #e85b3a; /* optional red/orange accent */
+  --accent: #f2a23a;
+  --accent-2: #e85b3a;
 
   --border: rgba(243, 240, 234, 0.12);
   --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);

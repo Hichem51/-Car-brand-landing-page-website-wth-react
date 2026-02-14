@@ -3,25 +3,28 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const hero = document.getElementById("home"); 
+      if (!hero) return;
+
+      const heroBottom = hero.offsetTop + hero.offsetHeight; 
+      setSticky(window.scrollY >= heroBottom);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${sticky ? "sticky" : ""}`}>
       <div className="nav-container">
-        {/* Logo Left */}
         <div className="nav-logo">
           <h2>TOYOTA</h2>
         </div>
 
-        {/* CENTER TOYOTA LOGO */}
         <div className="nav-center-logo">
           <img
             src="https://cdn.iconscout.com/icon/free/png-512/free-toyota-logo-icon-svg-download-png-827471.png?f=webp&w=256"
@@ -30,8 +33,7 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Menu Right */}
-        <ul className="nav-menu">
+        <ul className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
           <li>
             <a href="#home" className="nav-link">
               Home
@@ -48,13 +50,16 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#Footer" className="nav-link">
+            <a href="#footer" className="nav-link">
               Contact
             </a>
           </li>
         </ul>
 
-        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <div
+          className={`hamburger ${isMenuOpen ? "active" : ""}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
           <span></span>
           <span></span>
           <span></span>

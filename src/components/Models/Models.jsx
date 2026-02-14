@@ -11,13 +11,12 @@ const Models = () => {
     {
       name: "LAND CRUISER",
       desc: "Premium trim with advanced off-road tech. 326 HP hybrid power.",
-      image: "https://images.unsplash.com/photo-1545156521-1e0bbb203b54?w=500",
+      image: "./Land-cruiser-Hybrid.jpg",
     },
     {
       name: "LAND CRUISER DESERT",
       desc: "Sand-specialized suspension. Extreme dune capability.",
-      image:
-        "https://images.unsplash.com/photo-1606216794075-9f975c0e581d?w=500",
+      image: "./Land-cruiser-Desert.jpg",
     },
   ];
 
