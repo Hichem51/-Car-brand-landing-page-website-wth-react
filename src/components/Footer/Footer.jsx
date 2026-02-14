@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-brand">
           <div className="logo">
-            <h2>Toyota Land Cruiser</h2>
+            <h2>TOYOTA</h2>
             <span className="desert-icon">
               <FontAwesomeIcon icon={faMountainSun} />
             </span>
@@ -63,6 +63,8 @@ const Footer = () => {
             <a
               href="https://www.instagram.com/toyota"
               className="social-btn instagram"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
@@ -70,11 +72,18 @@ const Footer = () => {
             <a
               href="https://www.youtube.com/user/TOYOTAGlobal"
               className="social-btn youtube"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faYoutube} />
             </a>
 
-            <a href="https://x.com/ToyotaSoCal" className="social-btn twitter">
+            <a
+              href="https://x.com/ToyotaSoCal"
+              className="social-btn twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faXTwitter} />
             </a>
           </div>
